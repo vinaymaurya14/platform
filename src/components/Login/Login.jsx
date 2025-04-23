@@ -11,6 +11,12 @@ import Loginbg from "../../assets/LoginImages/loginBG.svg";
 import Microsoft from "../../assets/LoginImages/Microsoft.png";
 import "./Login.css";
 
+// Default demo credentials
+const DEFAULT_CREDENTIALS = {
+  email: 'demo@cibi.ai',
+  password: 'CibiDemo2024!'
+};
+
 export default function Login({ updateToken }) {
   const [passwordshow, setshowpassword] = useState(true);
   const eyeopen = () => {
@@ -20,12 +26,12 @@ export default function Login({ updateToken }) {
     setshowpassword(true);
   };
   const [email, setemail] = useState();
-
   const [password, setpassword] = useState();
   const [validate, setvalidate] = useState(false);
   const [errormessage, seterrormessage] = useState();
   const [successmessage, setsuccessmessage] = useState();
   const navigate = useNavigate();
+
   const login = async () => {
     seterrormessage();
     setsuccessmessage();
@@ -33,8 +39,15 @@ export default function Login({ updateToken }) {
       setvalidate(true);
       seterrormessage("Email and password required");
       return;
-    } else {
-      setvalidate(false);
+    }
+
+    // Check for demo credentials
+    if (email === DEFAULT_CREDENTIALS.email && password === DEFAULT_CREDENTIALS.password) {
+      const demoToken = 'demo_token_' + Date.now();
+      updateToken(demoToken);
+      sessionStorage.setItem("email", "demo_user");
+      navigate("/tabular");
+      return;
     }
 
     sessionStorage.setItem("email", email.replace("@cibi.com", ""));
@@ -77,8 +90,10 @@ export default function Login({ updateToken }) {
       window.location.href = result.url;
     } catch (error) {
       console.log(error);
+      seterrormessage("Microsoft login failed. Please use email/password login.");
     }
   };
+
   return (
     <Grid container>
       <Grid item xs={6} className="Login-left">
@@ -147,11 +162,6 @@ export default function Login({ updateToken }) {
               }
               onClick={() => setshowpassword(!passwordshow)}
             />
-            {/* {passwordshow ? (
-              <img className="eyeicon" src={eyeicon} onClick={eyeopen}></img>
-            ) : (
-              <RemoveRedEyeIcon className="eyeicon" onClick={eyeclose} />
-            )} */}
             <div
               style={{
                 display: "flex",
@@ -182,9 +192,6 @@ export default function Login({ updateToken }) {
                       }}
                     />
                   }
-                  // value={obj}
-                  // checked={predictOptions[obj] && predictOptions[obj]===true}
-                  // onChange={handleChangePredict}
                 />
                 <span>Remember for 30 days</span>
               </div>
@@ -227,6 +234,13 @@ export default function Login({ updateToken }) {
               </span>
             </center>
           )}
+          {/* <Box sx={{ textAlign: 'center', marginTop: '1rem', padding: '1rem', background: '#F6F6FF', borderRadius: '8px' }}>
+            <Typography variant="body2" style={{ color: '#6E6E88' }}>
+              Demo Credentials:<br />
+              Email: {DEFAULT_CREDENTIALS.email}<br />
+              Password: {DEFAULT_CREDENTIALS.password}
+            </Typography>
+          </Box> */}
         </Box>
       </Grid>
     </Grid>
