@@ -7,7 +7,7 @@ const Agents = () => {
   const [activeStep, setActiveStep] = useState('overview');
 
   const handleUseClick = () => {
-    window.location.href = 'http://localhost:3000/';
+    window.location.href = 'https://3c8b-183-82-119-26.ngrok-free.app';
   };
 
   const workflowSteps = [
