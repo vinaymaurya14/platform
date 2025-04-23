@@ -1,0 +1,36 @@
+.CreateProject {
+  color: #000;
+
+  /* H3/Semi-Bold/24 */
+  font-family: "Plus Jakarta Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.Text_creExp{
+  color: var(--Shades-Black-2, #3F3F50);
+/* Button-Small/Medium/16 */
+font-family: "Plus Jakarta Sans";
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+.FormLabels {
+  color:  #3f3f50 ;
+  font-family: Plus Jakarta Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.AddExp {
+  color:  #5420e8 ;
+  font-family: Plus Jakarta Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-left: 2px;
+}

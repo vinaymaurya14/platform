@@ -1,0 +1,104 @@
+.card-ctn {
+  border-radius: 20px;
+  border: 1px solid #eeeef8;
+  background: #fff;
+  /* width: 23%; */
+  width: calc(25% - 20px);
+  /* margin: 10px; */
+}
+
+.card-ctn:hover {
+  box-shadow: 0px 11px 20px 0px rgba(5, 16, 55, 0.1);
+  border: transparent solid 1px;
+  background: linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(to right, #5b32d0, #e04ef8) border-box;
+  border-color: transparent;
+}
+.card-header {
+  color: #101016;
+  /* H3/Semi-Bold/24 */
+  font-family: Plus Jakarta Sans;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  height: 40px;
+  padding: 20px !important;
+}
+
+.card-data-bold {
+  color: #3f3f50;
+  /* P/14/bold */
+  font-family: Plus Jakarta Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.card-label {
+  color: #3f3f50;
+  /* Text/Medium/12 */
+  font-family: Plus Jakarta Sans;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.card-description {
+  color: var(--Shades-Black-3, #6e6e88);
+
+  /* P/Regular/12 */
+  font-family: "Plus Jakarta Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 141%; /* 16.92px */
+  /* white-space: nowrap; */
+  overflow: hidden;
+}
+
+.card-button {
+  background: white;
+  color: #5420e8;
+  border-radius: 8px;
+  border: 1px solid #d3d3ea;
+  width: 100%;
+  color: #5420e8;
+  /* Label-Forms/Medium/16 */
+  font-family: Plus Jakarta Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.card-ctn:hover .card-button {
+  background: #5420e8;
+  color: #fff;
+  stroke: #fff;
+  fill: #fff;
+  border: none;
+}
+.expicon {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  padding: 1.547px 2.016px 1.598px 2.11px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: #ede8fc;
+  border-radius: 10px;
+  margin-right: 5px;
+}
+.viewprojects {
+  color: var(--Primary-Blue, #5420e8);
+  /* Label-Forms/Medium/16 */
+  font-family: "Plus Jakarta Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}

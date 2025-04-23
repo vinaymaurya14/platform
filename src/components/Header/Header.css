@@ -1,0 +1,99 @@
+.MuiAppBar-root{
+    border: 0px solid  #EEEEF8 ;
+    background:  #FFF ;
+    box-shadow: none;
+    height: 61px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px 24px;
+    justify-content: space-between;
+}
+
+.day-name{
+    color:  #B7B7D2 ;
+    /* Body/Bold/16 */
+    font-family: Plus Jakarta Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.date-label {
+    color: #1B2533;
+    /* Body/Bold/16 */
+    font-family: Plus Jakarta Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.search-box-ctn {
+    border-radius: 100px;
+    background: #EEEEF8;
+    padding: 3px;
+    width:70%;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon-ctn {
+    width: 34px;
+    height: 34px;
+    /* flex-shrink: 0; */
+    /* text-align: center; */
+    border-radius: 100px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color:#8D8DAC;
+    background-color: white;
+   
+}
+
+.search-box-ctn input{
+    border: 0px;
+}
+
+.profile-ctn{
+    display: flex;
+}
+
+.profile-pic-ctn{
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    background:  #D3D3EA;
+}
+
+.user-ctn {
+    display: flex;
+    flex-direction: column;
+    margin: auto 5px;
+    padding: 5px;
+}
+.wel-come{
+    font-size: 12px !important;
+}
+.user-name {
+    color:  #101016;
+    font-family: Plus Jakarta Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.user-role{
+    color:  #8D8DAC ;
+
+    /* P/Regular/12 */
+    font-family: Plus Jakarta Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 141%;
+}

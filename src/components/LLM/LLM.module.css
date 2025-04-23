@@ -1,0 +1,13 @@
+.header-tabs-ctn{
+    margin-bottom: 5px;
+    button.MuiTab-root{
+        color:#5420e8 !important;
+    }
+}
+
+.tab-labels{
+    &.MuiSelected{
+        color:#5420e8 
+    }
+    
+}
