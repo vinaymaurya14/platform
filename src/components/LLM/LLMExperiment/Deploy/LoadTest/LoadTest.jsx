@@ -55,8 +55,7 @@ export default function LoadTest() {
   };
   const navigate = useNavigate();
   const handleLTSubmit = () => {
-    return
-    setLoader(true);
+    return setLoader(true);
 
     const formData = {
       fail_ratio: LoadTestInputs.failRatio,

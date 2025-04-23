@@ -89,8 +89,7 @@ export default function Batch() {
     setScheduledValue(e.target.ScheduledValue);
   };
   const handleBatchSubmit = () => {
-    return 
-    setLoader(true);
+    return setLoader(true);
 
     const formData = {
       type: deployType,
