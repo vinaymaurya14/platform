@@ -407,31 +407,31 @@ const SupplyChainView = ({ onBack }) => {
 
           <div className="features-grid">
             <div className="feature-item">
-              <h3>Data Upload</h3>
+              <h3>&#10004;  Data Upload</h3>
               <p>Upload and process your supply chain data</p>
             </div>
             <div className="feature-item">
-              <h3>Demand Forecasting</h3>
+              <h3>&#10004; Demand Forecasting</h3>
               <p>AI-powered demand prediction and analysis</p>
             </div>
             <div className="feature-item">
-              <h3>Inventory Management</h3>
+              <h3>&#10004; Inventory Management</h3>
               <p>Optimize stock levels and reduce costs</p>
             </div>
             <div className="feature-item">
-              <h3>Transportation Logistics</h3>
+              <h3>&#10004; Transportation Logistics</h3>
               <p>Route optimization and delivery planning</p>
             </div>
             <div className="feature-item">
-              <h3>Supplier Selection</h3>
+              <h3>&#10004; Supplier Selection</h3>
               <p>Smart supplier evaluation and selection</p>
             </div>
             <div className="feature-item">
-              <h3>Production Scheduling</h3>
+              <h3>&#10004; Production Scheduling</h3>
               <p>Efficient production planning and scheduling</p>
             </div>
             <div className="feature-item">
-              <h3>Risk Management</h3>
+              <h3>&#10004; Risk Management</h3>
               <p>Proactive risk assessment and mitigation</p>
             </div>
           </div>
