@@ -387,7 +387,7 @@ const SupplyChainView = ({ onBack }) => {
   const navigate = useNavigate();
 
   const handleStartOptimization = () => {
-    window.location.href = 'https://3c8b-183-82-119-26.ngrok-free.app';
+    window.location.href = 'https://da75-183-82-119-26.ngrok-free.app';
   };
 
   return (
