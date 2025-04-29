@@ -385,9 +385,21 @@ const DetailView = ({ agent, onBack }) => {
 
 const SupplyChainView = ({ onBack }) => {
   const navigate = useNavigate();
+  const [showIframe, setShowIframe] = useState(false);
+  const [iframeLoading, setIframeLoading] = useState(true);
 
   const handleStartOptimization = () => {
-    window.location.href = 'https://da75-183-82-119-26.ngrok-free.app';
+    // Show iframe instead of redirecting
+    setShowIframe(true);
+    setIframeLoading(true);
+  };
+
+  const handleCloseIframe = () => {
+    setShowIframe(false);
+  };
+
+  const handleIframeLoad = () => {
+    setIframeLoading(false);
   };
 
   return (
@@ -396,86 +408,118 @@ const SupplyChainView = ({ onBack }) => {
         <span>←</span> Back
       </button>
       
-      <h1>Transform your supply chain with AI-powered optimization</h1>
-
-      <div className="content-grid">
-        <div className="main-card">
-          <h2>Supply Chain Agent</h2>
-          <p className="agent-description">
-            Our intelligent agent leverages cutting-edge AI to revolutionize your supply chain operations. Get started with our comprehensive optimization workflow.
-          </p>
-
-          <div className="features-grid">
-            <div className="feature-item">
-              <h3>&#10004;  Data Upload</h3>
-              <p>Upload and process your supply chain data</p>
-            </div>
-            <div className="feature-item">
-              <h3>&#10004; Demand Forecasting</h3>
-              <p>AI-powered demand prediction and analysis</p>
-            </div>
-            <div className="feature-item">
-              <h3>&#10004; Inventory Management</h3>
-              <p>Optimize stock levels and reduce costs</p>
-            </div>
-            <div className="feature-item">
-              <h3>&#10004; Transportation Logistics</h3>
-              <p>Route optimization and delivery planning</p>
-            </div>
-            <div className="feature-item">
-              <h3>&#10004; Supplier Selection</h3>
-              <p>Smart supplier evaluation and selection</p>
-            </div>
-            <div className="feature-item">
-              <h3>&#10004; Production Scheduling</h3>
-              <p>Efficient production planning and scheduling</p>
-            </div>
-            <div className="feature-item">
-              <h3>&#10004; Risk Management</h3>
-              <p>Proactive risk assessment and mitigation</p>
-            </div>
+      {showIframe ? (
+        <div className="iframe-container">
+          <div className="iframe-header">
+            <h2>Supply Chain Optimization Portal</h2>
+            <button className="close-iframe-btn" onClick={handleCloseIframe}>
+              ✕ Close
+            </button>
           </div>
-
-          <div className="action-section">
-            <button className="start-button" onClick={handleStartOptimization}>Start Optimization</button>
-            <p className="helper-text">Get started with our AI-powered supply chain optimization</p>
-          </div>
+          {iframeLoading && (
+            <div className="iframe-loading">
+              <div className="loading-spinner"></div>
+              <p>Loading optimization portal...</p>
+            </div>
+          )}
+          <iframe
+            src="http://localhost:3000/"
+            width="100%"
+            height="300px"
+            style={{ 
+              border: "none", 
+              marginTop: iframeLoading ? "-400px" : "0",
+              opacity: iframeLoading ? 0 : 1,
+              transition: "opacity 0.3s ease"
+            }}
+            title="Supply Chain Optimization"
+            onLoad={handleIframeLoad}
+          />
         </div>
+      ) : (
+        <>
+          <h1>Transform your supply chain with AI-powered optimization</h1>
 
-        <div className="benefits-section">
-          <h2>Key Benefits</h2>
-          <div className="benefits-list">
-            <div className="benefit-item">
-              <span className="benefit-icon">📈</span>
-              <div className="benefit-content">
-                <h4>Increased Efficiency</h4>
-                <p>Up to 30% improvement in operational efficiency</p>
+          <div className="content-grid">
+            <div className="main-card">
+              <h2>Supply Chain Agent</h2>
+              <p className="agent-description">
+                Our intelligent agent leverages cutting-edge AI to revolutionize your supply chain operations. Get started with our comprehensive optimization workflow.
+              </p>
+
+              <div className="features-grid">
+                <div className="feature-item">
+                  <h3>&#10004;  Data Upload</h3>
+                  <p>Upload and process your supply chain data</p>
+                </div>
+                <div className="feature-item">
+                  <h3>&#10004; Demand Forecasting</h3>
+                  <p>AI-powered demand prediction and analysis</p>
+                </div>
+                <div className="feature-item">
+                  <h3>&#10004; Inventory Management</h3>
+                  <p>Optimize stock levels and reduce costs</p>
+                </div>
+                <div className="feature-item">
+                  <h3>&#10004; Transportation Logistics</h3>
+                  <p>Route optimization and delivery planning</p>
+                </div>
+                <div className="feature-item">
+                  <h3>&#10004; Supplier Selection</h3>
+                  <p>Smart supplier evaluation and selection</p>
+                </div>
+                <div className="feature-item">
+                  <h3>&#10004; Production Scheduling</h3>
+                  <p>Efficient production planning and scheduling</p>
+                </div>
+                <div className="feature-item">
+                  <h3>&#10004; Risk Management</h3>
+                  <p>Proactive risk assessment and mitigation</p>
+                </div>
+              </div>
+
+              <div className="action-section">
+                <button className="start-button" onClick={handleStartOptimization}>Start Optimization</button>
+                <p className="helper-text">Get started with our AI-powered supply chain optimization</p>
               </div>
             </div>
-            <div className="benefit-item">
-              <span className="benefit-icon">💰</span>
-              <div className="benefit-content">
-                <h4>Cost Reduction</h4>
-                <p>15-25% reduction in supply chain costs</p>
-              </div>
-            </div>
-            <div className="benefit-item">
-              <span className="benefit-icon">🎯</span>
-              <div className="benefit-content">
-                <h4>Better Accuracy</h4>
-                <p>95% accuracy in demand forecasting</p>
-              </div>
-            </div>
-            <div className="benefit-item">
-              <span className="benefit-icon">⚡</span>
-              <div className="benefit-content">
-                <h4>Faster Decisions</h4>
-                <p>Real-time insights and recommendations</p>
+
+            <div className="benefits-section">
+              <h2>Key Benefits</h2>
+              <div className="benefits-list">
+                <div className="benefit-item">
+                  <span className="benefit-icon">📈</span>
+                  <div className="benefit-content">
+                    <h4>Increased Efficiency</h4>
+                    <p>Up to 30% improvement in operational efficiency</p>
+                  </div>
+                </div>
+                <div className="benefit-item">
+                  <span className="benefit-icon">💰</span>
+                  <div className="benefit-content">
+                    <h4>Cost Reduction</h4>
+                    <p>15-25% reduction in supply chain costs</p>
+                  </div>
+                </div>
+                <div className="benefit-item">
+                  <span className="benefit-icon">🎯</span>
+                  <div className="benefit-content">
+                    <h4>Better Accuracy</h4>
+                    <p>95% accuracy in demand forecasting</p>
+                  </div>
+                </div>
+                <div className="benefit-item">
+                  <span className="benefit-icon">⚡</span>
+                  <div className="benefit-content">
+                    <h4>Faster Decisions</h4>
+                    <p>Real-time insights and recommendations</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </>
+      )}
     </div>
   );
 };
